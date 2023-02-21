@@ -55,3 +55,8 @@ def facturas():
 @app.route('/contacto')
 def contacto():
     return render_template('contacto.html')
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
