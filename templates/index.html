@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+            <h1>{% block title %} Agregar una nueva factura {% endblock %}</h1>
+          <!-- Form -->
+    <form method="POST" action="/" class="align-items-center">
+        <div class="col-auto">
+        {{ form.csrf_token }}
+      <p>
+        {{ form.id.label }}
+        {{ form.id(size=20) }}
+      </p>
+
+      {% if form.id.errors %}
+      <ul class="errors">
+        {% for error in form.id.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <p>
+        {{ form.fecha.label }}
+        {{ form.fecha(size=20) }}
+      </p>
+
+      {% if form.fecha.errors %}
+      <ul class="errors">
+        {% for error in form.fecha.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+        <p>
+            {{ form.cliente.label }}
+            {{ form.cliente(size=20) }}
+        </p>
+
+        {% if form.cliente.errors %}
+            <ul class="errors">
+                {% for error in form.cliente.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+      <p>
+        {{ form.nif.label }}
+        {{ form.nif(size=20) }}
+      </p>
+
+      {% if form.nif.errors %}
+      <ul class="errors">
+        {% for error in form.nif.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+        <p>
+            {{ form.descripcion.label }}
+        </p>
+        {{ form.descripcion(rows=10, cols=50) }}
+
+        {% if form.descripcion.errors %}
+            <ul class="errors">
+                {% for error in form.descripcion.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.base.label }}
+            {{ form.base() }}
+        </p>
+
+        {% if form.base.errors %}
+            <ul class="errors">
+                {% for error in form.base.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+      <p>
+        {{ form.iva.label }}
+        {{ form.iva() }}
+      </p>
+
+      {% if form.iva.errors %}
+      <ul class="errors">
+        {% for error in form.iva.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <p>
+        {{ form.total.label }}
+        {{ form.total() }}
+      </p>
+
+      {% if form.total.errors %}
+      <ul class="errors">
+        {% for error in form.total.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+        </div>
+       <div class="mb-3">
+        <p>
+            {{ form.available() }} {{ form.available.label }}
+        </p>
+
+        {% if form.available.errors %}
+            <ul class="errors">
+                {% for error in form.available.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.nivel.label }}
+            {{ form.nivel() }}
+        </p>
+
+        {% if form.nivel.errors %}
+            <ul class="errors">
+                {% for error in form.nivel.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </p>
+       </div>
+    </form>
+        </div>
+</div>
+
+{% endblock %}

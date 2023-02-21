@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Facturas {% endblock %}</h1>
+    <h4> ID, Fecha, Cliente, NIF/CIF, Base, IVA, Total </h4>
+    <hr>
+    {% for factura in lista_facturas %}
+
+        <p> {{ factura['id'] }}, {{ factura['fecha'] }}, {{ factura['cliente'] }}, {{ factura['nif'] }}, {{ factura['base'] }}€, {{ factura['iva'] }}€, {{ factura['total'] }}€ </p>
+    {% endfor %}
+{% endblock %}
