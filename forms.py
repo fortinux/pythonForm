@@ -38,4 +38,4 @@ class FacturaForm(FlaskForm):
     nivel = RadioField('Nivel',
                        choices=['Básico', 'Intermedio', 'Preferencial'],
                        validators=[InputRequired()])
-    available = BooleanField('Disponible', default='checked')
+    disponible = BooleanField('Disponible', default='checked')

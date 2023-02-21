@@ -23,8 +23,8 @@ lista_facturas = [{
     'base': 100,
     'iva': 21,
     'total': 121,
-    'available': True,
-    'level': 'Beginner'
+    'disponible': True,
+    'nivel': 'Beginner'
     }]
 
 
@@ -40,7 +40,7 @@ def index():
                              'base': form.base.data,
                              'iva': form.iva.data,
                              'total': form.total.data,
-                             'disponible': form.available.data,
+                             'disponible': form.disponible.data,
                              'nivel': form.nivel.data
                              })
         return redirect(url_for('facturas'))

@@ -114,12 +114,12 @@
         </div>
        <div class="mb-3">
         <p>
-            {{ form.available() }} {{ form.available.label }}
+            {{ form.disponible() }} {{ form.disponible.label }}
         </p>
 
-        {% if form.available.errors %}
+        {% if form.disponible.errors %}
             <ul class="errors">
-                {% for error in form.available.errors %}
+                {% for error in form.disponible.errors %}
                     <li>{{ error }}</li>
                 {% endfor %}
             </ul>
