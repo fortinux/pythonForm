@@ -60,6 +60,46 @@
       </ul>
       {% endif %}
 
+       <p>
+            {{ form.direccion.label }}
+            {{ form.direccion(size=40) }}
+        </p>
+
+        {% if form.direccion.errors %}
+            <ul class="errors">
+                {% for error in form.direccion.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+       <p>
+            {{ form.ciudad.label }}
+            {{ form.ciudad(size=20) }}
+        </p>
+
+        {% if form.ciudad.errors %}
+            <ul class="errors">
+                {% for error in form.ciudad.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+       <p>
+            {{ form.codigo_postal.label }}
+            {{ form.codigo_postal(size=5) }}
+        </p>
+
+        {% if form.codigo_postal.errors %}
+            <ul class="errors">
+                {% for error in form.codigo_postal.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
         <p>
             {{ form.descripcion.label }}
         </p>

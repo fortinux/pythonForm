@@ -24,11 +24,17 @@ class FacturaForm(FlaskForm):
     id = StringField('ID', validators=[InputRequired(),
                                        Length(min=1)])
     fecha = StringField('Fecha', validators=[InputRequired(),
-                                             Length(min=3)])
+                                             Length(min=8)])
     cliente = StringField('Cliente', validators=[InputRequired(),
                                                  Length(min=3, max=100)])
     nif = StringField('NIF / CIF', validators=[InputRequired(),
                                                Length(max=9)])
+    direccion = StringField('Dirección', validators=[InputRequired(),
+                                                 Length(min=3, max=100)])
+    ciudad = StringField('Ciudad', validators=[InputRequired(),
+                                                 Length(min=3, max=100)])
+    codigo_postal = StringField('Código Postal', validators=[InputRequired(),
+                                                 Length(min=5, max=5)])
     descripcion = TextAreaField('Productos y servicios',
                                 validators=[InputRequired(),
                                             Length(max=200)])
